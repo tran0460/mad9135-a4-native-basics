@@ -1,10 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { SafeAreaView } from "react-native-safe-area-context";
 import Home from "./Screens/Home";
-import List from "./Screens/List";
 import { Ionicons } from "@expo/vector-icons";
+import DataNavigator from "./Navigators/DataNavigator";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -38,7 +37,7 @@ export default function App() {
             tabBarActiveTintColor: "black",
           }}
           name="Data"
-          component={List}
+          component={DataNavigator}
         />
       </Tab.Navigator>
     </NavigationContainer>
