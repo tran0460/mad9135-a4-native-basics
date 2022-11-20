@@ -27,7 +27,8 @@ export default function App() {
         />
         <Tab.Screen
           options={{
-            tabBarLabel: "Data",
+            title: "List",
+            tabBarLabel: "List",
             tabBarIcon: ({ focused }) =>
               focused ? (
                 <Ionicons name="list-circle" size={24} color="black" />
@@ -36,7 +37,7 @@ export default function App() {
               ),
             tabBarActiveTintColor: "black",
           }}
-          name="Data"
+          name="List"
           component={DataNavigator}
         />
       </Tab.Navigator>

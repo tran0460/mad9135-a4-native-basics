@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import List from "../Screens/List";
@@ -9,14 +8,14 @@ const Stack = createStackNavigator();
 const DataNavigator = () => {
   return (
     <Stack.Navigator>
-      <DataStack.Screen
+      <Stack.Screen
         name="DataScreen"
         component={List}
         options={{
           headerShown: false,
         }}
       />
-      <DataStack.Screen
+      <Stack.Screen
         name="DataDetailsScreen"
         component={Details}
         options={{
