@@ -2,19 +2,46 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import Home from "./Screens/Home";
+import List from "./Screens/List";
+import { Ionicons } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={<View></View>} />
-          <Tab.Screen name="Data" component={<View></View>} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Home",
+            tabBarLabel: "Home",
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <Ionicons name="md-home" size={24} color="black" />
+              ) : (
+                <Ionicons name="md-home-outline" size={24} color="black" />
+              ),
+            tabBarActiveTintColor: "black",
+          }}
+        />
+        <Tab.Screen
+          options={{
+            tabBarLabel: "Data",
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <Ionicons name="list-circle" size={24} color="black" />
+              ) : (
+                <Ionicons name="list-circle-outline" size={24} color="black" />
+              ),
+            tabBarActiveTintColor: "black",
+          }}
+          name="Data"
+          component={List}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
