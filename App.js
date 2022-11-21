@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createContext, useContext } from "react";
 import Home from "./Screens/Home";
 import { Ionicons } from "@expo/vector-icons";
 import { useState, useEffect } from "react";
 import DataNavigator from "./Navigators/DataNavigator";
+import { AppContextProvider } from "./AppContext";
 const Tab = createBottomTabNavigator();
-const AppContext = createContext();
 export default function App() {
   const [data, setData] = useState([]);
   const [currentItem, setCurrentItem] = useState({});
@@ -29,7 +28,7 @@ export default function App() {
 
   const contextValue = { data, setData, currentItem, setCurrentItem };
   return (
-    <AppContext.Provider value={contextValue}>
+    <AppContextProvider value={contextValue}>
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen
@@ -68,13 +67,10 @@ export default function App() {
           />
         </Tab.Navigator>
       </NavigationContainer>
-    </AppContext.Provider>
+    </AppContextProvider>
   );
 }
 
-export const useAppContext = () => {
-  return useContext(AppContext);
-};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
