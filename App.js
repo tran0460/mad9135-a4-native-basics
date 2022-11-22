@@ -50,6 +50,7 @@ export default function App() {
             options={{
               title: "List",
               tabBarLabel: "List",
+              headerShown: false,
               tabBarIcon: ({ focused }) =>
                 focused ? (
                   <Ionicons name="list-circle" size={24} color="black" />
