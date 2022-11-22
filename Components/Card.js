@@ -13,8 +13,9 @@ const Card = ({ data, navigation }) => {
         navigation.navigate("Details");
       }}>
       <Image
-        style={{ width: "100%", height: 200 }}
-        source={{ uri: data.movie_banner }}
+        resizeMode="contain"
+        style={{ width: "100%", height: 470 }}
+        source={{ uri: data.image }}
       />
       <View style={styles.cardContent}>
         <Text style={[styles.cardTitle, styles.paddingBottom]}>
