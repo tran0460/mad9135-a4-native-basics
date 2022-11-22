@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, FlatList } from "react-native";
+import { SafeAreaView, StyleSheet, FlatList } from "react-native";
 import { useCallback } from "react";
 import { useAppContext } from "../AppContext";
 import Card from "../Components/Card";
@@ -11,10 +11,19 @@ const List = () => {
     [data]
   );
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.listContainer}>
       <FlatList data={data} renderItem={renderListItem} />
     </SafeAreaView>
   );
 };
 
+const styles = StyleSheet.create({
+  listContainer: {
+    flex: 1,
+    width: "100%",
+    justifyContent: "center",
+    flexDirection: "column",
+    paddingVertical: 12,
+  },
+});
 export default List;
