@@ -12,7 +12,7 @@ export default function App() {
   const [currentItem, setCurrentItem] = useState({});
 
   useEffect(() => {
-    const url = `https://ghibliapi.herokuapp.com/films?_limit=10`;
+    const url = `https://ghibliapi.herokuapp.com/films?_limit=20`;
     try {
       fetch(url)
         .then(async (resp) => {
