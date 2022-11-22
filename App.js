@@ -19,7 +19,7 @@ export default function App() {
           if (resp.ok) return await resp.json();
         })
         .then((fetchData) => {
-          setData(fetchData);
+          setData(fetchData.sort((a, b) => b.rt_score - a.rt_score));
         });
     } catch (err) {
       console.error(err);
