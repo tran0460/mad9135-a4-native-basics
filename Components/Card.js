@@ -1,12 +1,15 @@
 import { Text, Image, StyleSheet, View } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useAppContext } from "../AppContext";
 
 const Card = ({ data, navigation }) => {
+  const { setCurrentItem } = useAppContext();
   return (
     <TouchableOpacity
       style={styles.cardContainer}
       onPress={() => {
+        setCurrentItem(data);
         navigation.navigate("Details");
       }}>
       <Image
