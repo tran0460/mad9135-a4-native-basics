@@ -9,18 +9,17 @@ const DataNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="DataScreen"
+        name="List"
         component={List}
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="DataDetailsScreen"
+        name="Details"
         component={Details}
         options={{
-          title: "More Details",
-          headerTransparent: true,
+          title: "Details",
         }}
       />
     </Stack.Navigator>
