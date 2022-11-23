@@ -21,9 +21,6 @@ const Card = ({ data, navigation }) => {
         <Text style={[styles.cardTitle, styles.paddingBottom]}>
           {data.title}
         </Text>
-        <Text style={[styles.callout, styles.paddingBottom]}>
-          {data.original_title_romanised}
-        </Text>
         <Text style={[styles.paddingBottom]}>Director: {data.director}</Text>
         <Text>Year: {data.release_date}</Text>
       </View>

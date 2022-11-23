@@ -3,7 +3,6 @@ import React from "react";
 import { useAppContext } from "../AppContext";
 const Details = () => {
   const { currentItem } = useAppContext();
-  console.log(currentItem);
   return (
     <View style={styles.screenContainer}>
       <Image
@@ -17,6 +16,9 @@ const Details = () => {
         </Text>
         <Text style={[styles.callout, styles.paddingBottom]}>
           {currentItem.original_title_romanised}
+        </Text>
+        <Text style={[styles.paddingBottom]}>
+          Director: {currentItem.director}
         </Text>
         <Text style={styles.paddingBottom}>
           Year: {currentItem.release_date}
