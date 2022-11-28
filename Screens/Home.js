@@ -1,9 +1,9 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { SafeAreaView, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 
 const Home = () => {
   return (
-    <View style={styles.screenContainer}>
+    <SafeAreaView style={styles.screenContainer}>
       <Image
         style={{ width: "100%", height: 300, marginBottom: 8 }}
         source={require("../assets/ghibli-image.jpeg")}
@@ -12,7 +12,7 @@ const Home = () => {
       <Text style={styles.title}>
         The Ghibli Library offers you a list of popular studio Ghibli movies!
       </Text>
-    </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({

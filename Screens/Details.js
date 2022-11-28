@@ -1,10 +1,10 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { useAppContext } from "../AppContext";
 const Details = () => {
   const { currentItem } = useAppContext();
   return (
-    <View style={styles.screenContainer}>
+    <SafeAreaView style={styles.screenContainer}>
       <Image
         style={{ width: "100%", height: 300, marginBottom: 8 }}
         source={{ uri: currentItem.movie_banner }}
@@ -25,7 +25,7 @@ const Details = () => {
         </Text>
         <Text style={styles.paddingBottom}>{currentItem.description}</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
