@@ -14,15 +14,24 @@ const Card = ({ data, navigation }) => {
       }}>
       <Image
         resizeMode="contain"
-        style={{ width: "100%", height: 470 }}
-        source={{ uri: data.image }}
+        style={{
+          width: 100,
+          height: 100,
+          marginLeft: "auto",
+          marginRight: "auto",
+          borderRadius: 160,
+        }}
+        source={{ uri: data.picture.large }}
       />
       <View style={styles.cardContent}>
-        <Text style={[styles.cardTitle, styles.paddingBottom]}>
-          {data.title}
+        <Text
+          style={[styles.cardTitle, styles.paddingBottom, styles.textCenter]}>
+          {`${data.name.first} ${data.name.last}`}
         </Text>
-        <Text style={[styles.paddingBottom]}>Director: {data.director}</Text>
-        <Text>Year: {data.release_date}</Text>
+        <Text style={[styles.paddingBottom, styles.textCenter]}>
+          {data.email}
+        </Text>
+        <Text style={styles.textCenter}>{data.phone}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -44,10 +53,11 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     backgroundColor: "#fff",
-    width: "80%",
+    width: "60%",
     overflow: "hidden",
     marginTop: 16,
     flex: 1,
+    alignItems: "center",
     gap: 12,
   },
   cardContent: {
@@ -57,6 +67,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 30,
     color: "#111",
+  },
+  textCenter: {
+    textAlign: "center",
   },
   callout: {
     fontSize: 15,

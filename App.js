@@ -12,14 +12,15 @@ export default function App() {
   const [currentItem, setCurrentItem] = useState({});
 
   useEffect(() => {
-    const url = `https://ghibliapi.herokuapp.com/films?_limit=20`;
+    const url = `https://randomuser.me/api/?results=20`;
     try {
       fetch(url)
         .then(async (resp) => {
           if (resp.ok) return await resp.json();
         })
         .then((fetchData) => {
-          setData(fetchData.sort((a, b) => b.rt_score - a.rt_score));
+          setData(fetchData.results);
+          console.log(fetchData.results[0]);
         });
     } catch (err) {
       console.error(err);

@@ -7,23 +7,20 @@ const Details = () => {
     <SafeAreaView style={styles.screenContainer}>
       <Image
         style={{ width: "100%", height: 300, marginBottom: 8 }}
-        source={{ uri: currentItem.movie_banner }}
+        source={{ uri: currentItem.picture.large }}
       />
       <View style={styles.content}>
         <Text style={[styles.title, styles.paddingBottom]}>
-          {currentItem.title}
-          {`  (${currentItem.original_title})`}
+          {`${currentItem.name.title} ${currentItem.name.first} ${currentItem.name.last}`}
         </Text>
         <Text style={[styles.callout, styles.paddingBottom]}>
-          {currentItem.original_title_romanised}
+          {currentItem.phone}
         </Text>
-        <Text style={[styles.paddingBottom]}>
-          Director: {currentItem.director}
-        </Text>
-        <Text style={styles.paddingBottom}>
-          Year: {currentItem.release_date}
-        </Text>
-        <Text style={styles.paddingBottom}>{currentItem.description}</Text>
+        <Text style={[styles.paddingBottom]}>Email: {currentItem.email}</Text>
+        <Text
+          style={
+            styles.paddingBottom
+          }>{`${currentItem.location.street.number} ${currentItem.location.street.name}, ${currentItem.location.state}, ${currentItem.location.country}`}</Text>
       </View>
     </SafeAreaView>
   );
